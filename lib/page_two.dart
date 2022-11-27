@@ -6,7 +6,9 @@ class PageTwo extends StatefulWidget {
 }
 
 class _PageTwoState extends State<PageTwo> {
-  final TextEditingController _controllerOne = TextEditingController();
+  final TextEditingController _controllerRed = TextEditingController();
+  final TextEditingController _controllerAmber = TextEditingController();
+  final TextEditingController _controllerGreen = TextEditingController();
   bool _isSelectedRed = false;
   bool _isSelectedAmber = false;
   bool _isSelectedGreen = false;
@@ -26,8 +28,8 @@ class _PageTwoState extends State<PageTwo> {
           },
           child: _isSelectedRed
               ? Container(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                  width: 300,
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.red[100],
@@ -35,30 +37,30 @@ class _PageTwoState extends State<PageTwo> {
                   child: TextField(
                     style: TextStyle(
                       fontSize: 40,
-                      letterSpacing: .7,
+                      letterSpacing: 1.5,
                     ),
-                    controller: _controllerOne,
+                    controller: _controllerRed,
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
                     decoration: InputDecoration(
                         labelText: 'input a value',
                         labelStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 20,
                         )),
                   ),
                 )
               : Container(
-                  width: 200,
-                  height: 50,
+                  width: 320,
+                  height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.red[200],
                   ),
-                  child: Text('is off'),
+                  child: Text('input is off'),
                 ),
         ),
         const SizedBox(
-          height: 40,
+          height: 20,
         ),
         GestureDetector(
           onTap: () {
@@ -70,26 +72,39 @@ class _PageTwoState extends State<PageTwo> {
           },
           child: _isSelectedAmber
               ? Container(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                  width: 300,
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.amber[100],
                   ),
-                  child: TextField(),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40,
+                      letterSpacing: 1.5,
+                    ),
+                    controller: _controllerAmber,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                        labelText: 'input a value',
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                  ),
                 )
               : Container(
-                  width: 200,
-                  height: 50,
+                  width: 320,
+                  height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.amber[200],
                   ),
-                  child: Text('is off'),
+                  child: Text('input is off'),
                 ),
         ),
         const SizedBox(
-          height: 40,
+          height: 20,
         ),
         GestureDetector(
           onTap: () {
@@ -101,26 +116,39 @@ class _PageTwoState extends State<PageTwo> {
           },
           child: _isSelectedGreen
               ? Container(
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                  width: 300,
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.green[100],
                   ),
-                  child: TextField(),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40,
+                      letterSpacing: 1.5,
+                    ),
+                    controller: _controllerGreen,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                        labelText: 'input a value',
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                  ),
                 )
               : Container(
-                  width: 200,
-                  height: 50,
+                  width: 320,
+                  height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.green[200],
                   ),
-                  child: Text('is off'),
+                  child: Text('input is off'),
                 ),
         ),
         const SizedBox(
-          height: 100,
+          height: 140,
         ),
       ],
     );
