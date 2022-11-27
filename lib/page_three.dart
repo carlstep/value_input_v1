@@ -20,6 +20,7 @@ class _PageThreeState extends State<PageThree> {
             setState(() {
               // Toggle light when tapped.
               _textFieldOneIsOn = !_textFieldOneIsOn;
+
               _textFieldTwoIsOn = _textFieldTwoIsOn;
               // _textFieldThreeIsOn = _textFieldThreeIsOn;
             });
