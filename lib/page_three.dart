@@ -1,40 +1,65 @@
 import 'package:flutter/material.dart';
 
+import 'package:currency_picker/currency_picker.dart';
+
 class PageThree extends StatefulWidget {
   @override
   State<PageThree> createState() => _PageThreeState();
 }
 
 class _PageThreeState extends State<PageThree> {
-  bool _textFieldOneIsOn = false;
-  bool _textFieldTwoIsOn = false;
-  // bool _textFieldThreeIsOn = false;
+  final TextEditingController _controllerRed = TextEditingController();
+  final TextEditingController _controllerAmber = TextEditingController();
+  final TextEditingController _controllerGreen = TextEditingController();
+  bool _isSelectedRed = false;
+  bool _isSelectedAmber = false;
+  bool _isSelectedGreen = false;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         GestureDetector(
           onTap: () {
             setState(() {
-              // Toggle light when tapped.
-              _textFieldOneIsOn = !_textFieldOneIsOn;
-
-              _textFieldTwoIsOn = _textFieldTwoIsOn;
-              // _textFieldThreeIsOn = _textFieldThreeIsOn;
+              _isSelectedRed = !_isSelectedRed;
+              _isSelectedAmber = false;
+              _isSelectedGreen = false;
             });
           },
-          child: Container(
-            color: _textFieldOneIsOn ? Colors.orange[100] : Colors.red[100],
-            padding: const EdgeInsets.all(8),
-            // Change button text when light changes state.
-            child: _textFieldOneIsOn
-                ? TextField(
-                    decoration: InputDecoration(labelText: 'TextField Text'),
-                  )
-                : Text('the target'),
-          ),
+          child: _isSelectedRed
+              ? Container(
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.red[100],
+                  ),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40,
+                      letterSpacing: 1.5,
+                    ),
+                    controller: _controllerRed,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                        labelText: 'input a value',
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                  ),
+                )
+              : Container(
+                  width: 320,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.red[200],
+                  ),
+                  child: Text('input is off'),
+                ),
         ),
         const SizedBox(
           height: 20,
@@ -42,48 +67,92 @@ class _PageThreeState extends State<PageThree> {
         GestureDetector(
           onTap: () {
             setState(() {
-              // Toggle light when tapped.
-              _textFieldOneIsOn = _textFieldOneIsOn;
-              _textFieldTwoIsOn = !_textFieldTwoIsOn;
-              // _textFieldThreeIsOn = _textFieldThreeIsOn;
+              _isSelectedRed = false;
+              _isSelectedAmber = !_isSelectedAmber;
+              _isSelectedGreen = false;
             });
           },
-          child: Container(
-            padding: EdgeInsets.all(8),
-            color: _textFieldTwoIsOn ? Colors.lightBlue[100] : Colors.red[100],
-            child: _textFieldTwoIsOn
-                ? TextField(
-                    decoration: InputDecoration(labelText: 'TextField Text'),
-                  )
-                : Text('the target'),
-          ),
+          child: _isSelectedAmber
+              ? Container(
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.amber[100],
+                  ),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40,
+                      letterSpacing: 1.5,
+                    ),
+                    controller: _controllerAmber,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                        labelText: 'input a value',
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                  ),
+                )
+              : Container(
+                  width: 320,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.amber[200],
+                  ),
+                  child: Text('input is off'),
+                ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
+        ),
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              _isSelectedRed = false;
+              _isSelectedAmber = false;
+              _isSelectedGreen = !_isSelectedGreen;
+            });
+          },
+          child: _isSelectedGreen
+              ? Container(
+                  padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
+                  width: 320,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.green[100],
+                  ),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40,
+                      letterSpacing: 1.5,
+                    ),
+                    controller: _controllerGreen,
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                        labelText: 'input a value',
+                        labelStyle: TextStyle(
+                          fontSize: 20,
+                        )),
+                  ),
+                )
+              : Container(
+                  width: 320,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.green[200],
+                  ),
+                  child: Text('input is off'),
+                ),
+        ),
+        const SizedBox(
+          height: 140,
         ),
       ],
     );
   }
 }
-
-
-
-// GestureDetector(
-//           onTap: () {
-//             setState(() {
-//               // Toggle light when tapped.
-//               _textFieldOneIsOn = _textFieldOneIsOn;
-//               _textFieldTwoIsOn = _textFieldTwoIsOn;
-//               _textFieldThreeIsOn = !_textFieldThreeIsOn;
-//             });
-//           },
-//           child: Container(
-//             padding: EdgeInsets.all(8),
-//             color: _textFieldThreeIsOn ? Colors.green[100] : Colors.red[100],
-//             child: _textFieldThreeIsOn
-//                 ? TextField(
-//                     decoration: InputDecoration(labelText: 'TextField Text'),
-//                   )
-//                 : Text('the target'),
-//           ),
-//         ),
