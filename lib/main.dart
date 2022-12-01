@@ -4,6 +4,7 @@ import './page_one.dart';
 import './page_two.dart';
 import './page_three.dart';
 import './page_four.dart';
+import './page_five.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DefaultTabController(length: 4, child: InputPage()),
+      home: DefaultTabController(length: 5, child: InputPage()),
     );
   }
 }
@@ -41,6 +42,9 @@ class _InputPageState extends State<InputPage> {
           Tab(
             text: 'Four',
           ),
+          Tab(
+            text: 'five',
+          ),
         ]),
         title: const Text('Input Page'),
       ),
@@ -53,6 +57,7 @@ class _InputPageState extends State<InputPage> {
             PageTwo(),
             PageThree(),
             PageFour(),
+            PageFive(),
           ]),
         ),
       ),
