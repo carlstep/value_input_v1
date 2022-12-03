@@ -27,7 +27,7 @@ class _PageThreeState extends State<PageThree> {
               width: 340,
               height: 140,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Stack(
                   children: [
                     Positioned(
@@ -45,7 +45,7 @@ class _PageThreeState extends State<PageThree> {
                                 padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                                 width: 300,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(10),
                                   color: Colors.red[100],
                                 ),
                                 child: TextField(
@@ -77,7 +77,7 @@ class _PageThreeState extends State<PageThree> {
                     ),
                     Positioned(
                       top: 5,
-                      right: 5,
+                      right: 0,
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.red,
@@ -97,7 +97,7 @@ class _PageThreeState extends State<PageThree> {
               width: 340,
               height: 140,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Stack(
                   children: [
                     Positioned(
@@ -115,7 +115,7 @@ class _PageThreeState extends State<PageThree> {
                                 padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                                 width: 300,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(10),
                                   color: Colors.amber[100],
                                 ),
                                 child: TextField(
@@ -147,7 +147,7 @@ class _PageThreeState extends State<PageThree> {
                     ),
                     Positioned(
                       top: 5,
-                      right: 5,
+                      right: 0,
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.amber,
@@ -167,7 +167,7 @@ class _PageThreeState extends State<PageThree> {
               width: 340,
               height: 140,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Stack(
                   children: [
                     Positioned(
@@ -185,7 +185,7 @@ class _PageThreeState extends State<PageThree> {
                                 padding: EdgeInsets.fromLTRB(15, 0, 15, 15),
                                 width: 300,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(10),
                                   color: Colors.green[100],
                                 ),
                                 child: TextField(
@@ -217,7 +217,7 @@ class _PageThreeState extends State<PageThree> {
                     ),
                     Positioned(
                       top: 5,
-                      right: 5,
+                      right: 0,
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.amber,
