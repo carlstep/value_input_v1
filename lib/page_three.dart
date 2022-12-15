@@ -80,7 +80,6 @@ class _PageThreeState extends State<PageThree> {
                       right: 0,
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.red,
                         backgroundImage: AssetImage('assets/flags/kenya.png'),
                       ),
                     ),
@@ -150,7 +149,6 @@ class _PageThreeState extends State<PageThree> {
                       right: 0,
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.amber,
                         backgroundImage: AssetImage('assets/flags/greece.png'),
                       ),
                     ),
@@ -220,7 +218,6 @@ class _PageThreeState extends State<PageThree> {
                       right: 0,
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.amber,
                         backgroundImage: AssetImage('assets/flags/usa.png'),
                       ),
                     ),
