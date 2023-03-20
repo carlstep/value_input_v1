@@ -216,9 +216,43 @@ class _PageThreeState extends State<PageThree> {
                     Positioned(
                       top: 5,
                       right: 0,
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundImage: AssetImage('assets/flags/usa.png'),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 200,
+                                  color: Colors.amber[50],
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        const Text('Modal BottomSheet'),
+                                        ListTile(
+                                          title: Text('option 1'),
+                                        ),
+                                        ListTile(
+                                          title: Text('option 2'),
+                                        ),
+                                        ListTile(
+                                          title: Text('option 3'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          });
+                        },
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage('assets/flags/usa.png'),
+                        ),
                       ),
                     ),
                   ],
@@ -227,10 +261,48 @@ class _PageThreeState extends State<PageThree> {
             ),
           ],
         ),
-        const SizedBox(
-          height: 100,
-        ),
+        // const SizedBox(
+        //   height: 100,
+        // ),
+        BottomSheetExample(),
       ],
+    );
+  }
+}
+
+class BottomSheetExample extends StatelessWidget {
+  const BottomSheetExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: const Text('showModalBottomSheet'),
+        onPressed: () {
+          showModalBottomSheet<void>(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                height: 200,
+                color: Colors.amber,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const Text('Modal BottomSheet'),
+                      ElevatedButton(
+                        child: const Text('Close BottomSheet'),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
