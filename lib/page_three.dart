@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:currency_picker/currency_picker.dart';
-
 class PageThree extends StatefulWidget {
   @override
   State<PageThree> createState() => _PageThreeState();
